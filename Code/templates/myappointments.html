@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Appointment Details</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+body {
+  background-size: cover;
+}
+.icon {
+  margin-right: 12%;
+}
+.sidebar {
+  margin-top: 5%;
+  padding: 10px;
+  width:20%;
+  background-color: #1a1a1a;
+  position: fixed;
+  height: 80%;
+  overflow: auto;
+  opacity: 0.9;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  margin-top: 8%;
+}
+ 
+.sidebar a.active {
+  background-color: white;
+  color: black;
+} 
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  /*padding: 1px 16px;*/
+  width:74%;
+}
+
+.div {
+    margin-left: 10%;
+    padding: 45px;
+    opacity: 0.9;
+    height: 525px;
+}
+
+.head {
+  color: white;
+    font-size: 42px;
+}
+
+.text {
+  color: white;
+    font-size: 16px;
+}
+
+.btndiv {
+   margin-top: 2%;
+}
+.btn1 {
+  padding: 10px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn1:hover {
+  padding: 10px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn2 {
+  padding: 10px;
+    color: black;
+    background-color: white;
+    margin-left: 1%;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn2:hover {
+    padding: 10px;
+    color: white;
+    border: 1px solid white;
+    margin-left: 1%;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+
+<!--<body style="background-image: url(/static/images/admission.png);">-->
+<body>
+
+<div class="sidebar">
+  <a href="/drdetails" >My Details</a>
+  <a href="/myappointments" class="active">My Appointments</a>
+  <a href="/viewdrcustomer" >View Customer</a>
+  <!--<a href="/searchdoctor" >Search Doctor</a>-->
+  <a href="/adddescription" >Add Description</a>
+  <a href="/logout" >Logout</a>
+</div>
+
+<div class="content">
+  <div class="col-md-12 div">
+
+<div class="col-md-12" style="padding: 0px;margin-bottom: 18px;"> 
+
+<div class="col-md-3" style="padding: 0px;margin-top: 6px;"> 
+     <h3 style="">Appointment List</h3>
+</div>
+
+<div class="col-md-6" style="padding: 0px; margin-top: 22px;">
+
+<form class="form-horizontal" action='/myappointments/' method="POST" id="signup-form">
+    {% csrf_token %}  
+
+    <select name="search_date" class="form-control txtbox1 search_dates" style="width: 50%;display: inline;">
+              
+       <option value="1">Select Date</option>
+       {% for s in main.unique_date %}
+       <option value="{{ s.slotdate }}">{{ s.slotdate }}</option>
+        {% endfor %}  
+    </select>
+
+    <button type="submit" class="btn btn-success" style="margin-left: 8px;margin-top: -3px;">View Appointment</button>
+
+</form>
+</div>
+
+<div class="col-md-3" style="padding: 0px;margin-top: 22px;">
+  
+</div>
+
+</div>
+
+    <div class="col-md-12" style="padding: 0px;"> 
+<table width="100%" class="table" style="">
+
+   <tr>
+    <th style="text-align: center;">Customer Name</th>
+    <th style="text-align: center;">Email</th>
+    <th style="text-align: center;">Mobile No</th>
+    <th style="text-align: center;">Appointment Date</th>
+    <th style="text-align: center;">Appointment Time</th>
+   </tr>
+  
+ {% for s in main.customer_details %}
+   <tr>
+
+   <td style="text-align: center;">{{ s.name }}</td>
+   <td style="text-align: center;">{{ s.email }}</td>
+   <td style="text-align: center;">{{ s.mobile }}</td> 
+   <td style="text-align: center;">{{ s.appointmentdate }}</td> 
+   <td style="text-align: center;">{{ s.appointmentslot }}</td> 
+
+  </tr> 
+  {% endfor %}   
+</table>
+</div>  
+
+
+  </div>
+</div>
+
+
+</body>
+</html>

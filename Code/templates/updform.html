@@ -1,0 +1,8 @@
+<form method="POST" action="/update/"  class="post-form">{% csrf_token %}
+          <input type="text" name="firstname" placeholder="Firstname" value="{{ students.firstname }}"/>
+		  <input type="text" name="lastname" placeholder="Lastname" value="{{ students.firstname }}"/>
+		  <input type="text" name="email" placeholder="Email" value="{{ students.firstname }}"/>
+		  <input type="hidden" name="id"  value="{{ students.id }}"/>
+        <button type="submit" class="save btn btn-default">Save</button>
+</form>
+

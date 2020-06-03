@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prediction</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+body {
+  background-size: cover;
+}
+.icon {
+  margin-right: 12%;
+}
+.sidebar {
+  margin-top: 5%;
+  padding: 10px;
+  width:20%;
+  background-color: #1a1a1a;
+  position: fixed;
+  height: 80%;
+  overflow: auto;
+  opacity: 0.9;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  margin-top: 8%;
+}
+ 
+.sidebar a.active {
+  background-color: white;
+  color: black;
+} 
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  /*padding: 1px 16px;*/
+  width:74%;
+}
+
+.div {
+    background-color: #1a1a1a;
+    margin-top: 68px;
+    margin-left: 10%;
+    padding: 45px;
+    opacity: 0.9;
+    height: 525px;
+}
+
+.head {
+  color: white;
+    font-size: 42px;
+}
+
+.text {
+  color: white;
+    font-size: 16px;
+}
+
+.btndiv {
+   margin-top: 2%;
+}
+.btn1 {
+  padding: 10px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn1:hover {
+  padding: 10px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn2 {
+  padding: 10px;
+    color: black;
+    background-color: white;
+    margin-left: 1%;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn2:hover {
+    padding: 10px;
+    color: white;
+    border: 1px solid white;
+    margin-left: 1%;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+
+<body style="background-image: url(/static/images/appoint.jpeg);">
+
+<div class="row" style="margin-top: 13%;">
+<div class="col-md-4">
+
+</div>
+<div class="col-md-4">
+ <h3 style="margin-left: 12%;">Choose Your Login</h3>
+</div>
+<div class="col-md-4">
+  
+</div>
+</div>
+
+<div class="row" style="margin-top: 2%;">
+<div class="col-md-3">
+
+</div>
+<div class="col-md-9">
+  <a href="/adminlogin" style="background-color: #80c1ff;color: white;padding: 10px;text-decoration: none;font-size: 20px;border-radius: 5px;margin-left: 2%;">Admin Login</a>
+  <a href="/patientlogin" style="background-color: #80c1ff;color: white;padding: 10px;text-decoration: none;font-size: 20px;border-radius: 5px;margin-left: 4%;">Patient Login</a>
+  <a href="/doctorlogin" style="background-color: #80c1ff;color: white;padding: 10px;text-decoration: none;font-size: 20px;border-radius: 5px;margin-left: 4%;">Doctor Login</a>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Add Doctor</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+body {
+  background-size: cover;
+}
+.icon {
+  margin-right: 12%;
+}
+.sidebar {
+  margin-top: 5%;
+  padding: 10px;
+  width:20%;
+  background-color: #1a1a1a;
+  position: fixed;
+  height: 80%;
+  overflow: auto;
+  opacity: 0.9;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  margin-top: 8%;
+}
+ 
+.sidebar a.active {
+  background-color: white;
+  color: black;
+} 
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  /*padding: 1px 16px;*/
+  width:74%;
+}
+
+.div {
+    background-color: #1a1a1a;
+    margin-top: 68px;
+    margin-left: 10%;
+    /*padding: 45px;*/
+    opacity: 0.9;
+    height: 525px;
+}
+
+.head {
+  color: white;
+    font-size: 42px;
+}
+
+.text {
+  color: white;
+    font-size: 16px;
+}
+
+.btndiv {
+   margin-top: 3%;
+}
+.btn1 {
+  padding: 10px;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn1:hover {
+  padding: 10px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn2 {
+  padding: 10px;
+    color: black;
+    background-color: white;
+    margin-left: 1%;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn2:hover {
+    padding: 10px;
+    color: white;
+    border: 1px solid white;
+    margin-left: 1%;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+</head>
+
+<body style="background-image: url(/static/images/admission.png);">
+
+<div class="sidebar">
+  <a href="/adddoctor" class="active">Add Doctor</a>
+  <a href="/viewdoctor" >View Doctor</a>
+  <a href="/viewcustomer" >View Customers</a>
+  <a href="/viewappointments" >View Appointments</a>
+  <a href="/viewfeedback" >View Feedback</a>
+  <a href="/logout" >Logout</a>
+</div>
+
+<div class="content">
+  <div class="col-md-12 div">
+
+<div class="col-md-12" style="padding: 0px;margin-bottom: 18px;"> 
+<div class="col-md-4" style="padding: 0px;margin-top: 6px;"> </div>
+<div class="col-md-4" style="padding: 0px;margin-top: 6px;"> 
+     <h3 style="color: white;">Add Doctor Details</h3>
+          <form class="form-horizontal" action='/adddoctor/' method="POST" id="signup-form">
+    {% csrf_token %}
+
+  <div class="col-md-12 txtboxdiv" style="padding: 0px;">
+
+     <h4 style="color: white;">Doctor Name :</h4>
+     <input type="text" name="name" class="form-control txtbox1" required="required">
+
+     <h4 style="color: white;">Email :</h4>
+     <input type="email" name="email" class="form-control txtbox1" required="required">
+
+     <h4 style="color: white;">Mobile No :</h4>
+     <input type="number" name="mobile" class="form-control txtbox1" required="required" min="0" max="9999999999" minlength="9" maxlength="10" >
+
+     <h4 style="color: white;">Address :</h4>
+     <textarea name="address" class="form-control" row="2" required></textarea>
+
+     <h4 style="color: white;">Category</h4>
+     <select name="category" class="form-control txtbox1 institutes">
+       <option value="General Physician">General Physician</option>
+       <option value="Bone">Bone</option>
+       <option value="Heart">Heart</option>
+       <option value="Dentist">Dentist</option>
+       <option value="Neurologist">Neurologist</option>
+       <option value="Kidney">Kidney</option>
+       <option value="Cardiologist">Cardiologist</option>
+     </select>
+     <!--<input type="text" name="rate" placeholder="Naac Rate" class="form-control txtbox1" required="required">
+     <input type="text" name="hsc" placeholder="H.S.C %" class="form-control txtbox1" required="required">
+     <input type="text" name="cet" placeholder="C.E.T Marks" class="form-control txtbox1" required="required">-->
+  </div>
+
+  <div class="col-md-12 btndiv">
+   <center> <button type="submit" class="btn lgnbtn">Submit</button></center>
+  </div>
+    </form>
+</div>
+
+</div>
+
+
+  </div>
+</div>
+
+
+<!--<script>
+
+$('.regions').on('change', function(){
+
+  var region = $(this).val(); 
+  var string = "";
+    $('.institutes').html('');
+
+  if(region == '1'){
+          
+  var institute = ["Atharva College of Engineering", "RJIT", "Dj Sanghvi", "Thakur College of Engineering","L.R Tiwari","S.T Francis"];
+  var code = ["Atharva","RJIT","Sanghvi","Thakur","Tiwari","Francis"];
+
+           for(i = 0; i < institute.length; i++){ 
+             string += '<option value="'+code[i]+'">'+institute[i]+'</option>';
+           }
+
+           $('.institutes').html(string);         
+
+  }else if(region == '2' ){
+
+      var institute = ["Rizvi", "Vidyalankar", "Thadomal","Fr. agnel"];
+          var code = ["Rizvi","Vidyalankar","Thadomal","Agnel"]; 
+
+           for(i = 0; i < institute.length; i++){ 
+             string += '<option value="'+code[i]+'">'+institute[i]+'</option>';
+           }
+
+           $('.institutes').html(string);   
+
+
+  }else{
+
+         var institute = ["S.t john", "Universal", "Theam", "Viva", "Vartak"];
+         var code = ["John","Universal","Theam","Viva","Vartak"];
+
+           for(i = 0; i < institute.length; i++){ 
+             string += '<option value="'+code[i]+'">'+institute[i]+'</option>';
+           }
+
+           $('.institutes').html(string);            
+
+  }
+
+});
+
+
+</script>-->
+
+
+</body>
+</html>

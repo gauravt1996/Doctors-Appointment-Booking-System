@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+<h3>User Login</h3>
+
+<form method="POST" action="/logins/"  class="post-form">{% csrf_token %}
+
+      <input type="text" name="username" placeholder="Username" /><br><br>
+	  <input type="password" name="password1" placeholder="Password" /><br><br>
+        <button type="submit" class="save btn btn-default">Submit</button>
+</form>
+
+ </body>
+</html>

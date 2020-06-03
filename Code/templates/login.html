@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>User Login</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<!-- Latest compiled validate js -->
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+</head>
+
+  <style>
+
+	body {
+		background-size: cover;
+	}
+	.head {
+		color: white;
+		margin-top:6%;
+		font-weight: 600;
+	}
+	.lgndiv {
+		background-color: #1a1a1a;
+		opacity: 0.8;
+		margin-top:4%;
+		padding: 15px;
+		box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+	}
+	.divhead {
+		background-color: #073276;
+		color: white;
+		padding: 8px;
+		border-radius: 16px;
+		margin-top: 5%;
+	}
+	.txtboxdiv {
+		padding: 0;
+		margin-top: 5%;
+	}
+	.txtbox1 {
+		padding: 22px 10px;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+	}
+	.txtbox2 {
+		padding: 22px 10px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+	.btndiv {
+		padding: 0;
+		margin-top: 5%;
+	}
+	.lgnbtn {
+		width: 100%;
+		height: 45px;
+		background-color: #073276;
+		color: white;
+		border-radius: 10px;
+	}
+	.btn.focus, .btn:focus, .btn:hover {
+		color: #fff;
+		text-decoration: none;
+	}
+	.divsign {
+		margin-top: 4%;
+		padding:0;
+	}
+	.paddn {
+		padding:0;
+	}
+	.atag,atag:hover {
+		color: white !important;
+		cursor: pointer;
+		text-decoration: none !important;
+	}
+	.switch {
+	  position: relative;
+	  display: inline-block;
+	  width: 40px;
+	  height: 20px;
+	}
+
+	.switch input { 
+	  opacity: 0;
+	  width: 0;
+	  height: 0;
+	}
+	.slider {
+	  position: absolute;
+	  cursor: pointer;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background-color: #ccc;
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	}
+
+	.slider:before {
+	  position: absolute;
+	  content: "";
+	  height: 12px;
+	  width: 14px;
+	  bottom: 4px;
+	  background-color: white;
+	  -webkit-transition: .4s;
+	  transition: .4s;
+	}
+
+	input:checked + .slider {
+	  background-color: #2196F3;
+	}
+
+	input:focus + .slider {
+	  box-shadow: 0 0 1px #2196F3;
+	}
+
+	input:checked + .slider:before {
+	  -webkit-transform: translateX(26px);
+	  -ms-transform: translateX(26px);
+	  transform: translateX(26px);
+	}
+	/* Rounded sliders */
+	.slider.round {
+	  border-radius: 34px;
+	}
+
+	.slider.round:before {
+	  border-radius: 50%;
+	}
+	.psdicon {
+		top: -30px;
+		left: 317px;
+		cursor: pointer;
+	}
+
+	.error{
+		color: white;
+	}
+
+  </style>
+
+<body style="background-image: url(/static/images/medicine.jpg);">
+
+<div class="container">
+  <div class="col-md-12 text-center">
+	<h2 class="head"></h2>
+  </div>
+  <div class="col-md-4 col-md-offset-4 lgndiv">
+	<div class="col-md-12 divhead">
+		<h4>Login Here</h4>
+	</div>
+
+    <form id="login-form" class="form" action="/login/" method="post">
+    {% csrf_token %}
+
+	<div class="col-md-12 txtboxdiv">
+		<input type="email" name="username" class="form-control txtbox1" placeholder="Username">
+		<input type="password" name="password" class="form-control txtbox2" placeholder="Password">
+		<span class="glyphicon glyphicon-eye-close psdicon"></span>
+	</div>
+	<div class="col-md-12 btndiv">
+		<button type="submit" class="btn lgnbtn">LOGIN</button>
+	</div>
+    </form>
+
+
+	<div class="col-md-12 divsign">
+	<div class="col-md-8 paddn">
+
+	</div>
+	<div class="col-md-4 text-right paddn">
+	<a href="/register" class="atag">Register Here</a>
+	</div>
+	</div>
+  </div>
+</div>
+
+<script>
+		
+// validate signup form on keyup and submit
+		$("#login-form").validate({
+			
+			rules: {
+				username: "required",
+				password: {
+					required: true,
+					minlength: 8
+				},
+			
+			},
+			messages: {
+				username: "Please enter your email",
+				password: {
+					required: "Please provide a password",
+					minlength: "Your password must be at least 8 characters long"
+				},	
+			}
+		});
+		
+</script>
+    
+</body>
+</html>

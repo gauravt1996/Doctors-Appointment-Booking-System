@@ -1,0 +1,139 @@
+<center><p style="color: white;">Morning Appointment</p></center>
+
+<div class="col-md-12" style="padding: 0px;margin-bottom: 10px;"> 
+     <div class="col-md-2" style="padding: 0px;"> </div>
+          <div class="col-md-8" style="padding: 0px;">
+
+{% if main.slot1 == 'no' %}
+  <button type="button" value="1" class="btn btn-default clk" >9:00-9:30</button>
+{% else %}
+    <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;">9:00-9:30</button>
+{% endif %}
+
+{% if main.slot2 == 'no' %}
+  <button type="button" value="2" class="btn btn-default clk" style="margin-left: 6px;">9:30-10:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 6px;">9:30-10:00</button> 
+{% endif %}
+
+{% if main.slot3 == 'no' %}
+  <button type="button" value="3" class="btn btn-default clk" style="margin-left: 6px;">10:00-10:30</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 6px;">10:00-10:30</button> 
+{% endif %}
+
+{% if main.slot4 == 'no' %}
+  <button type="button" value="4" class="btn btn-default clk" style="margin-left: 6px;">10:30-11:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 6px;">10:30-11:00</button> 
+{% endif %}
+
+{% if main.slot5 == 'no' %}
+  <button type="button" value="5" class="btn btn-default clk" style="margin-left: 6px;">11:00-11:30</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 6px;">11:00-11:30</button> 
+{% endif %}
+
+{% if main.slot6 == 'no' %}
+  <button type="button" value="6" class="btn btn-default clk" style="margin-left: 6px;">11:30-12:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 6px;">11:30-12:00</button> 
+{% endif %}
+
+          </div>
+     <div class="col-md-2" style="padding: 0px;"> </div>
+</div>
+
+<center><p style="color: white;">Afternoon Appointment</p></center>
+
+<div class="col-md-12" style="padding: 0px;margin-bottom: 10px;"> 
+  <div class="col-md-2" style="padding: 0px;"> </div>
+      <div class="col-md-8" style="padding: 0px;">
+
+{% if main.slot7 == 'no' %}
+  <button type="button" value="7" class="btn btn-default clk" >1:30-2:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;">1:30-2:00</button> 
+{% endif %}
+
+{% if main.slot8 == 'no' %}
+  <button type="button" value="8" class="btn btn-default clk" style="margin-left: 18px;">2:00-2:30</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">2:00-2:30</button> 
+{% endif %}
+
+{% if main.slot9 == 'no' %}
+  <button type="button" value="9" class="btn btn-default clk" style="margin-left: 18px;">2:30-3:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">2:30-3:00</button> 
+{% endif %}
+
+{% if main.slot10 == 'no' %}
+  <button type="button" value="10" class="btn btn-default clk" style="margin-left: 18px;">3:00-3:30</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">3:00-3:30</button> 
+{% endif %}  
+
+{% if main.slot11 == 'no' %}
+  <button type="button" value="11" class="btn btn-default clk" style="margin-left: 18px;">3:30-4:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">3:30-4:00</button> 
+{% endif %}  
+
+{% if main.slot12 == 'no' %}
+  <button type="button" value="12" class="btn btn-default clk" style="margin-left: 18px;">4:00-4:30</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">4:00-4:30</button> 
+{% endif %}    
+
+      </div>
+  <div class="col-md-2" style="padding: 0px;"> </div>
+</div>
+
+  <center><p style="color: white;">Evening Appointment</p></center>
+
+<div class="col-md-12" style="padding: 0px;"> 
+  
+  <div class="col-md-2" style="padding: 0px;"> </div>
+  <div class="col-md-8" style="padding: 0px;">
+
+{% if main.slot13 == 'no' %}   
+  <button type="button" value="13" class="btn btn-default clk">6:00-6:30</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;">6:00-6:30</button> 
+{% endif %}  
+
+{% if main.slot14 == 'no' %}   
+  <button type="button" value="14" class="btn btn-default clk" style="margin-left: 18px;">6:30-7:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">6:30-7:00</button> 
+{% endif %}  
+
+{% if main.slot15 == 'no' %}   
+  <button type="button" value="15" class="btn btn-default clk" style="margin-left: 18px;">7:00-7:30</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">7:00-7:30</button> 
+{% endif %} 
+
+{% if main.slot16 == 'no' %}   
+  <button type="button" value="16" class="btn btn-default clk" style="margin-left: 18px;">7:30-8:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">7:30-8:00</button> 
+{% endif %} 
+
+{% if main.slot17 == 'no' %} 
+  <button type="button" value="17" class="btn btn-default clk" style="margin-left: 18px;">8:00-8:30</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">8:00-8:30</button> 
+{% endif %} 
+
+{% if main.slot18 == 'no' %} 
+  <button type="button" value="18" class="btn btn-default clk" style="margin-left: 18px;">8:30-9:00</button>
+{% else %}
+  <button type="button" class="btn btn-default" style="cursor: none;border:red 3px solid;margin-left: 18px;">8:30-9:00</button> 
+{% endif %}   
+
+  </div>
+  <div class="col-md-2" style="padding: 0px;"> </div>
+
+</div>
